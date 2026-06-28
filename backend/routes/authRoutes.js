@@ -11,5 +11,7 @@ router.get('/test', authMiddleware, (req, res) => {
         user: req.user
     });
 });
+
+// Returns the currently logged-in user's information.
 router.get("/me", authMiddleware, getCurrentUser);
 module.exports = router;
