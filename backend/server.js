@@ -9,6 +9,7 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
 
+const connectDB = require('./config/db');
 const startServer = async () => {
     await connectDB();
 
@@ -18,6 +19,9 @@ const startServer = async () => {
 };
 
 startServer();
+
+const authRoutes = require('./routes/authRoutes');
+app.use('/api/auth', authRoutes);
 
 app.get('/', (req, res) => {
     res.send("ChatSphere server is running !");
