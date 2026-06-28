@@ -93,4 +93,9 @@ const loginUser = async (req, res) => {
     }
 };
 
-module.exports = {registerUser, loginUser};
+const getCurrentUser = (req, res) => {
+    console.log(req.user);
+    res.status(200).json(req.user);
+};
+
+module.exports = {registerUser, loginUser, getCurrentUser};

@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const {registerUser, loginUser} = require('../controllers/authController');
 const authMiddleware = require("../middleware/authMiddleware");
-router.post('/register', registerUser);
+const {registerUser, loginUser, getCurrentUser} = require('../controllers/authController');
+router.post('/register', registerUser);   
 router.post('/login', loginUser);
 
 router.get('/test', authMiddleware, (req, res) => {
@@ -11,4 +11,5 @@ router.get('/test', authMiddleware, (req, res) => {
         user: req.user
     });
 });
+router.get("/me", authMiddleware, getCurrentUser);
 module.exports = router;

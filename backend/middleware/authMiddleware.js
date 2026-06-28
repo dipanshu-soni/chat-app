@@ -27,7 +27,7 @@ const authMiddleware = async (req, res, next) => {
         if (!user)
         {
             return res.status(401).json({
-                message: "User not found."
+                message: "User not found !"
             });
         }
 
