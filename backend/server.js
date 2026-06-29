@@ -26,6 +26,9 @@ app.use('/api/auth', authRoutes);
 const userRoutes = require("./routes/userRoutes");
 app.use('/api', userRoutes);
 
+const messageRoutes = require("./routes/messageRoutes");
+app.use("/api", messageRoutes);
+
 app.get('/', (req, res) => {
     res.send("ChatSphere server is running !");
 });
