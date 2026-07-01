@@ -23,8 +23,8 @@ const Register = () => {
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
         // Without this, the browser refreshes the page after submitting the form
+        e.preventDefault();
         
         try
         {
